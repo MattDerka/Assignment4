@@ -18,6 +18,7 @@ public class VendingMachine {
         }
     }
 
+
     /**
      * Creates a standard arrangement for the vending machine. All the
      * components are created and interconnected. The hardware is initially
