@@ -1,4 +1,5 @@
 ﻿using Frontend4.Hardware;
+using seng301_asgn4.src;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 class ProductFacade
 {
     private HardwareFacade hardware;
+    private BusinessRule business;
     public event EventHandler<ProductEventArgs> released;
 
     public ProductFacade(HardwareFacade hardwarefacade)
