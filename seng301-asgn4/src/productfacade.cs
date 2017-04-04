@@ -27,8 +27,6 @@ class ProductFacade
         hardware.ProductRacks[rackNum].DispenseProduct();
     }
 
-    public void loadProducts()
-
     public string getProductName(int rackNum)
     {
         var name = hardware.ProductKinds[rackNum].Name;
