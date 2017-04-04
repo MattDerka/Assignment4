@@ -28,6 +28,11 @@ class ProductFacade
         {
             throw new Exception("No products left in rack");
         }
+        var numOfRacks = hardware.ProductRacks.Length;
+        if(rackNum > numOfRacks)
+        {
+            throw new Exception("Rack number is invalid");
+        }
         hardware.ProductRacks[rackNum].DispenseProduct();
     }
 
