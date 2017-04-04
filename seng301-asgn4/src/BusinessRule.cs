@@ -14,13 +14,23 @@ namespace seng301_asgn4.src
         private ProductFacade productFacade;
 
         private int paymentInserted = 0;
-        private List<Coin> inseted = new List<Coin>();
+        private List<Coin> inserted = new List<Coin>();
 
         public BusinessRule(CommunicationFacade communicationFacade, PaymentFacade paymentFacade, ProductFacade productFacade)
         {
             this.commFacade = communicationFacade;
             this.paymentFacade = paymentFacade;
             this.productFacade = productFacade;
+        }
+
+        public void addCoins(Coin coin)
+        {
+            inserted.Add(coin);
+        }
+
+        public void addCredit(int coin)
+        {
+            paymentInserted += coin;
         }
 
     }
