@@ -19,21 +19,19 @@ namespace seng301_asgn4.src
             this.hardwareFacade = hardwareFacade;
             this.businessRule = businessRule;
 
-           // this.hardwareFacade.CoinReceptacle.CoinAdded += new EventHandler<CoinEventArgs>(addCoin);
+            this.hardwareFacade.CoinReceptacle.CoinAdded += new EventHandler<CoinEventArgs>(addCoin);
             //Do the same for business rule
 
         }
-/*
+
         public void addCoin(object sender, CoinEventArgs e)
         {
             businessRule.addCoins(e.Coin);
         }
 
-        public void addCC(object sender, CentEventArgs e)
+        public void addCredit(object sender, CentEventArgs e)
         {
-            businessRule.addCC(e.Cent.Value);
+            businessRule.addCredit(e.Cent.Value);
         }
-        */
     }
-
 }

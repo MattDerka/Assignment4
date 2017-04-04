@@ -11,15 +11,11 @@ class ProductFacade
 {
     private HardwareFacade hardware;
     private BusinessRule business;
-    public event EventHandler<ProductEventArgs> released;
 
-    public ProductFacade(HardwareFacade hardwarefacade)
+    public ProductFacade(HardwareFacade hardwarefacade, BusinessRule busRule)
     {
         hardware = hardwarefacade;
-        foreach(var rack in hardware.ProductRacks)
-        {
-            rack.ProductRemoved += Rack_ProductRemoved;
-        }
+        business = busRule;
     }
 
     public void despenseProduct(int rackNum)
@@ -39,9 +35,5 @@ class ProductFacade
         return name;
     }
 
-    private void Rack_ProductRemoved(object sender, ProductEventArgs e)
-    {
-        this.released(sender, e);
-    }
 }
 
