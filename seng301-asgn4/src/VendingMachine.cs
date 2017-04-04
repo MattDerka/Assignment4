@@ -51,4 +51,9 @@ public class VendingMachine {
 
 	    /* YOU CAN BUILD AND INSTALL THE HARDWARE HERE */
     }
+
+    public void Configure(List<ProductKind> productKinds)
+    {
+
+    }
 }
