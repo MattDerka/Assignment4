@@ -24,18 +24,10 @@ class ProductFacade
 
     public void despenseProduct(int rackNum)
     {
-        var num = hardware.ProductRacks[rackNum].Count;
-        if (num == 0)
-        {
-            throw new Exception("No products left in rack");
-        }
-        var numOfRacks = hardware.ProductRacks.Length;
-        if(rackNum > numOfRacks)
-        {
-            throw new Exception("Rack number is invalid");
-        }
         hardware.ProductRacks[rackNum].DispenseProduct();
     }
+
+    public void loadProducts()
 
     public string getProductName(int rackNum)
     {
