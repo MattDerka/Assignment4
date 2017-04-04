@@ -51,11 +51,11 @@ public class VendingMachine {
      */
     public VendingMachine(Cents[] coinKinds, int selectionButtonCount, int coinRackCapacity, int productRackCapacity, int receptacleCapacity) {
 	    this.hardwareFacade = new HardwareFacade(coinKinds, selectionButtonCount, coinRackCapacity, productRackCapacity, receptacleCapacity);
-
-
         /* YOU CAN BUILD AND INSTALL THE HARDWARE HERE */
-        this.productFacade = new ProductFacade(hardwareFacade);
+        this.productFacade = new ProductFacade(hardwareFacade, businessRule);
         this.paymentFacade = new PaymentFacade(hardwareFacade, businessRule);
+        //this.communicationFacade = new CommunicationFacade(hardwareFacade, businessRule);
+        this.businessRule = new BusinessRule(communicationFacade, paymentFacade, productFacade);
     }
 
     public void Configure(List<ProductKind> productKinds)
