@@ -1,4 +1,5 @@
-﻿using Frontend4.Hardware;
+﻿using Frontend4;
+using Frontend4.Hardware;
 using seng301_asgn4.src;
 using System;
 using System.Collections.Generic;
@@ -28,9 +29,25 @@ class ProductFacade
         {
             throw new Exception("No products left in rack");
         }
+        var numOfRacks = hardware.ProductRacks.Length;
+        if(rackNum > numOfRacks)
+        {
+            throw new Exception("Rack number is invalid");
+        }
         hardware.ProductRacks[rackNum].DispenseProduct();
     }
 
+    public string getProductName(int rackNum)
+    {
+        var name = hardware.ProductKinds[rackNum].Name;
+        return name;
+    }
+
+    public Cents getProductCost(int rackNum)
+    {
+        var name = hardware.ProductKinds[rackNum].Cost;
+        return name;
+    }
 
     private void Rack_ProductRemoved(object sender, ProductEventArgs e)
     {
