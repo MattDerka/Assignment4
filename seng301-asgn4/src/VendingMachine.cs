@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Frontend4;
 using Frontend4.Hardware;
-
+using seng301_asgn4.src;
 
 /**
  * Represents vending machines, fully configured and with all software
@@ -12,6 +12,10 @@ using Frontend4.Hardware;
 public class VendingMachine {
 
     private HardwareFacade hardwareFacade;
+    private ProductFacade productFacade;
+    private CommunicationFacade communicationFacade;
+    private PaymentFacade paymentFacade;
+    private BusinessRule businessRule;
     public HardwareFacade Hardware {
         get {
             return this.hardwareFacade;
@@ -47,13 +51,15 @@ public class VendingMachine {
      */
     public VendingMachine(Cents[] coinKinds, int selectionButtonCount, int coinRackCapacity, int productRackCapacity, int receptacleCapacity) {
 	    this.hardwareFacade = new HardwareFacade(coinKinds, selectionButtonCount, coinRackCapacity, productRackCapacity, receptacleCapacity);
-
-
-	    /* YOU CAN BUILD AND INSTALL THE HARDWARE HERE */
+        /* YOU CAN BUILD AND INSTALL THE HARDWARE HERE */
+        this.productFacade = new ProductFacade(hardwareFacade, businessRule);
+        this.paymentFacade = new PaymentFacade(hardwareFacade, businessRule);
+        //this.communicationFacade = new CommunicationFacade(hardwareFacade, businessRule);
+        this.businessRule = new BusinessRule(communicationFacade, paymentFacade, productFacade);
     }
 
     public void Configure(List<ProductKind> productKinds)
     {
-
+        hardwareFacade.Configure(productKinds);
     }
 }
