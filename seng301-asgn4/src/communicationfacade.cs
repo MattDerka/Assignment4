@@ -10,25 +10,38 @@ namespace seng301_asgn4.src
     public class CommunicationFacade
     {
         private VendingMachine d;
-       // int button;
-
+        // int button;
+        private Dictionary<SelectionButton, int> buttonIndexs;
         public CommunicationFacade(VendingMachine vm)
         {
             this.d = vm;
-
+            this.buttonIndexs = new Dictionary<SelectionButton, int>();
+            for(int b = 0; b < d.Hardware.SelectionButtons.Length; b++)
+            {
+                d.Hardware.SelectionButtons[b].Pressed += new EventHandler(selectionButton);
+                buttonIndexs[d.Hardware.SelectionButtons[b]] = b;
+            }
         }
 
-        public void selectionButton(int button)
+
+        public void selectionButton(object sender, EventArgs e)
         {
-            //d.Hardware.SelectionButtons[button].Pressed += d.business.getProduct;
-            d.Hardware.SelectionButtons[button].Press();
-           
+            int i = buttonIndexs[(SelectionButton)sender];
+            var kind = d.Hardware.ProductKinds[i];
+            int cost = kind.Cost.Value;
+            d.business.selectionMade(i, kind, cost, d.Hardware.CoinRacks);
         }
 
-        //Used to display the product name to a touch screen or scrolling text bar
-        public void getName(string Item)
+
+        //Used to display the product name and price to a touch screen or scrolling text bar
+        public void getName(string item)
         {
-            //hardwareFacade.Display.Message = Item;
+            d.Hardware.Display.DisplayMessage(item);
+        }
+
+        public void getPrice(int cost)
+        {
+            d.Hardware.Display.DisplayMessage(cost.ToString());
         }
     }
 }

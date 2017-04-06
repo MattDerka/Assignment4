@@ -23,6 +23,7 @@ public class ProductFacade
         d.Hardware.ProductRacks[rackNum].DispenseProduct();
     }
 
+    //Products can be anything since we only require the name and the price
     public string getProductName(int rackNum)
     {
         var name = d.Hardware.ProductKinds[rackNum].Name;

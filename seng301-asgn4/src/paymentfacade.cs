@@ -18,9 +18,6 @@ namespace seng301_asgn4.src
             this.d = vm;
             
             d.Hardware.CoinReceptacle.CoinAdded += new EventHandler<CoinEventArgs>(addCoin);
-
-            //Do the same for business rule
-
         }
 
         public void addCoin(object sender, CoinEventArgs e)
@@ -28,17 +25,12 @@ namespace seng301_asgn4.src
             d.business.addCoins(e.Coin);
         }
 
+        //This accounts for debit, credit card, tap. Only adds to credit. Could also take online orders, cheques, and human organs
         public void addCredit(object sender, CoinEventArgs e)
         {
             d.business.addCredit(e.Coin.Value.Value);
         }
 
-        public void dispenseChange(List<int> coins)
-        {
-            //Dispense the change here        
-        }
-
-        
     }
 
 }
