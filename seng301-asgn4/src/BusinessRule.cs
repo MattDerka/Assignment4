@@ -1,4 +1,5 @@
 ﻿using Frontend4;
+using Frontend4.Hardware;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,5 +34,9 @@ namespace seng301_asgn4.src
             paymentInserted += coin;
         }
 
+        public void selectionMade(int index, ProductKind productKind, int cost, CoinRack[] coinRacks)
+        {
+
+        }
     }
 }
