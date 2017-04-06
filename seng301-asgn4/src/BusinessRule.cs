@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace seng301_asgn4.src
 {
-    class BusinessRule
+    public class BusinessRule
     {
 
 
