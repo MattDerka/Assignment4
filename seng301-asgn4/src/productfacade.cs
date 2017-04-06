@@ -9,29 +9,29 @@ using System.Threading.Tasks;
 
 class ProductFacade
 {
-    private HardwareFacade hardware;
-    private BusinessRule business;
+    private VendingMachine d;
 
-    public ProductFacade(HardwareFacade hardwarefacade, BusinessRule busRule)
+
+    public ProductFacade(VendingMachine vm)
     {
-        hardware = hardwarefacade;
-        business = busRule;
+        this.d = vm;
     }
 
     public void despenseProduct(int rackNum)
     {
-        hardware.ProductRacks[rackNum].DispenseProduct();
+        
+        d.Hardware.ProductRacks[rackNum].DispenseProduct();
     }
 
     public string getProductName(int rackNum)
     {
-        var name = hardware.ProductKinds[rackNum].Name;
+        var name = d.Hardware.ProductKinds[rackNum].Name;
         return name;
     }
 
     public Cents getProductCost(int rackNum)
     {
-        var name = hardware.ProductKinds[rackNum].Cost;
+        var name = d.Hardware.ProductKinds[rackNum].Cost;
         return name;
     }
 

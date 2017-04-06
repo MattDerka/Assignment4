@@ -9,19 +9,28 @@ namespace seng301_asgn4.src
 {
     class CommunicationFacade
     {
-        private HardwareFacade hardwareFacade;
+        private VendingMachine d;
         private BusinessRule businessRule;
+       // int button;
 
-
-        public CommunicationFacade(HardwareFacade hardwareFacade, BusinessRule businessRule)
+        public CommunicationFacade(VendingMachine vm)
         {
-            this.hardwareFacade = hardwareFacade;
-            this.businessRule = businessRule;
+            this.d = vm;
+
+            //hardwareFacade.SelectionButtons[button].Pressed += CommunicationFacade_Pressed;
+
         }
 
         public void selectionButton(int button)
         {
-            hardwareFacade.SelectionButtons[button].Press();
+            d.Hardware.SelectionButtons[button].Pressed += businessRule.getProduct;
+            d.Hardware.SelectionButtons[button].Press();
+        }
+
+        //Used to display the product name to a touch screen or scrolling text bar
+        public void getName(string Item)
+        {
+            //hardwareFacade.Display.Message = Item;
         }
     }
 }

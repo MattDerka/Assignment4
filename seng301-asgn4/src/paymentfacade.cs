@@ -10,17 +10,14 @@ namespace seng301_asgn4.src
 {
     class PaymentFacade
     {
-        private HardwareFacade hardwareFacade;
-        private BusinessRule businessRule;
-        
+        private VendingMachine d;
 
-        public PaymentFacade(HardwareFacade hardwareFacade, BusinessRule businessRule)
+
+        public PaymentFacade(VendingMachine vm)
         {
-            this.hardwareFacade = hardwareFacade;
-            this.businessRule = businessRule;
-
-            this.hardwareFacade.CoinReceptacle.CoinAdded += new EventHandler<CoinEventArgs>(addCoin);
-            this.hardwareFacade.CoinReceptacle.CoinAdded += new EventHandler<CoinEventArgs>(addCC);
+            this.d = vm;
+            
+            d.Hardware.CoinReceptacle.CoinAdded += new EventHandler<CoinEventArgs>(addCoin);
 
             //Do the same for business rule
 
@@ -28,13 +25,10 @@ namespace seng301_asgn4.src
 
         public void addCoin(object sender, CoinEventArgs e)
         {
-            businessRule.addCoins(e.Coin);
+            dbusinessRule.addCoins(e.Coin);
         }
 
-        public void addCC(object sender, CoinEventArgs e)
-        {
-            businessRule.addCredit(e.Coin.Value.Value);
-        }
+
         
     }
 

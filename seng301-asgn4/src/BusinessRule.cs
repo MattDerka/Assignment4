@@ -9,28 +9,36 @@ namespace seng301_asgn4.src
 {
     class BusinessRule
     {
-        private CommunicationFacade commFacade;
-        private PaymentFacade paymentFacade;
-        private ProductFacade productFacade;
+
+
+        private VendingMachine d;
 
         private int paymentInserted = 0;
         private List<Coin> inserted = new List<Coin>();
 
-        public BusinessRule(CommunicationFacade communicationFacade, PaymentFacade paymentFacade, ProductFacade productFacade)
+        public BusinessRule(VendingMachine vm)
         {
-            this.commFacade = communicationFacade;
-            this.paymentFacade = paymentFacade;
-            this.productFacade = productFacade;
+            this.d = vm;
         }
 
         public void addCoins(Coin coin)
         {
             inserted.Add(coin);
+            int value = coin.Value.Value;
+            paymentInserted += value;
         }
 
-        public void addCredit(int coin)
+
+
+        public void getProduct(object sender, EventArgs e)
         {
-            paymentInserted += coin;
+           // int id = e.ToString.paymentFacade.
+          //  string name = productFacade.getProductName(rackNum);
+
+           // if(paymentInserted >= price)
+           // {
+            //    productFacade.despenseProduct(rackNum)
+           // }
         }
 
     }
