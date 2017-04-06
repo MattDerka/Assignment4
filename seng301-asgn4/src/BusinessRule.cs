@@ -17,6 +17,7 @@ namespace seng301_asgn4.src
         private int paymentInserted = 0;
         private List<Coin> inserted = new List<Coin>();
 
+
         public BusinessRule(VendingMachine vm)
         {
             this.d = vm;
@@ -35,21 +36,12 @@ namespace seng301_asgn4.src
             //Do something with Communication Facade
         }
 
-        public void getProduct(object sender, EventArgs e)
-        {
-           // int id = e.ToString.paymentFacade.
-          //  string name = productFacade.getProductName(rackNum);
 
-           // if(paymentInserted >= price)
-           // {
-            //    productFacade.despenseProduct(rackNum)
-           // }
-        }
 
-        public void selectionMade(int vmIndex, ProductKind productKind, int cost, CoinRack[] coinRacks)
+        public void selectionMade(int index, ProductKind productKind, int cost, CoinRack[] coinRacks)
         {
             //Dispense the product
-
+            d.product.despenseProduct(index);
             //Calculate Change 
 
             //Dispense change if applicable 

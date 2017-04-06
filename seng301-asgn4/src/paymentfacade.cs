@@ -25,12 +25,12 @@ namespace seng301_asgn4.src
 
         public void addCoin(object sender, CoinEventArgs e)
         {
-            dbusinessRule.addCoins(e.Coin);
+            d.business.addCoins(e.Coin);
         }
 
         public void addCredit(object sender, CoinEventArgs e)
         {
-            businessRule.addCredit(e.Coin.Value.Value);
+            d.business.addCredit(e.Coin.Value.Value);
         }
 
         public void dispenseChange(List<int> coins)
