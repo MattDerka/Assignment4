@@ -8,7 +8,7 @@ using Frontend4.Hardware;
 
 namespace seng301_asgn4.src
 {
-    class PaymentFacade
+    public class PaymentFacade
     {
         private VendingMachine d;
 
