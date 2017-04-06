@@ -9,18 +9,16 @@ namespace seng301_asgn4.src
 {
     class BusinessRule
     {
-        private CommunicationFacade commFacade;
-        private PaymentFacade paymentFacade;
-        private ProductFacade productFacade;
+
+
+        private VendingMachine d;
 
         private int paymentInserted = 0;
         private List<Coin> inserted = new List<Coin>();
 
-        public BusinessRule(CommunicationFacade communicationFacade, PaymentFacade paymentFacade, ProductFacade productFacade)
+        public BusinessRule(VendingMachine vm)
         {
-            this.commFacade = communicationFacade;
-            this.paymentFacade = paymentFacade;
-            this.productFacade = productFacade;
+            this.d = vm;
         }
 
         public void addCoins(Coin coin)
