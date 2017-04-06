@@ -11,21 +11,51 @@ using seng301_asgn4.src;
  */
 public class VendingMachine {
 
+    // private BusinessRule businessRule;
+
     private HardwareFacade hardwareFacade;
-    private BusinessRule businessRule;
-    private ProductFacade productFacade;
-    private CommunicationFacade communicationFacade;
-    private PaymentFacade paymentFacade;
-   // private BusinessRule businessRule;
     public HardwareFacade Hardware {
         get {
             return this.hardwareFacade;
         }
     }
 
+    private ProductFacade productFacade;
+    public ProductFacade product
+    {
+        get
+        {
+            return this.productFacade;
+        }
+    }
 
 
+    private CommunicationFacade communicationFacade;
+    public CommunicationFacade comm
+    {
+        get
+        {
+            return this.communicationFacade;
+        }
+    }
 
+    private PaymentFacade paymentFacade;
+    public PaymentFacade payment
+    {
+        get
+        {
+            return this.paymentFacade;
+        }
+    }
+
+    private BusinessRule businessRule;
+    public BusinessRule business
+    {
+        get
+        {
+            return this.businessRule;
+        }
+    }
 
     /**
      * Creates a standard arrangement for the vending machine. All the
