@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace seng301_asgn4.src
 {
-    class CommunicationFacade
+    public class CommunicationFacade
     {
         private VendingMachine d;
         private BusinessRule businessRule;
