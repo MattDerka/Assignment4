@@ -30,6 +30,15 @@ namespace seng301_asgn4.src
             businessRule.addCoins(e.Coin);
         }
 
+        public void addCredit(object sender, CoinEventArgs e)
+        {
+            businessRule.addCredit(e.Coin.Value.Value);
+        }
+
+        public void dispenseChange(List<int> coins)
+        {
+            //Dispense the change here        
+        }
 
         
     }

@@ -1,4 +1,5 @@
 ﻿using Frontend4;
+using Frontend4.Hardware;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,11 @@ namespace seng301_asgn4.src
             paymentInserted += value;
         }
 
-
+        public void addCredit(int amount)
+        {
+            this.paymentInserted += amount;
+            //Do something with Communication Facade
+        }
 
         public void getProduct(object sender, EventArgs e)
         {
@@ -41,6 +46,15 @@ namespace seng301_asgn4.src
            // {
             //    productFacade.despenseProduct(rackNum)
            // }
+        }
+
+        public void selectionMade(int vmIndex, ProductKind productKind, int cost, CoinRack[] coinRacks)
+        {
+            //Dispense the product
+
+            //Calculate Change 
+
+            //Dispense change if applicable 
         }
 
     }

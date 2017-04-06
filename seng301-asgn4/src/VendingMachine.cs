@@ -54,7 +54,7 @@ public class VendingMachine {
         /* YOU CAN BUILD AND INSTALL THE HARDWARE HERE */
         this.productFacade = new ProductFacade(hardwareFacade, businessRule);
         this.paymentFacade = new PaymentFacade(hardwareFacade, businessRule);
-        //this.communicationFacade = new CommunicationFacade(hardwareFacade, businessRule);
+        this.communicationFacade = new CommunicationFacade(hardwareFacade, businessRule);
         this.businessRule = new BusinessRule(communicationFacade, paymentFacade, productFacade);
     }
 
