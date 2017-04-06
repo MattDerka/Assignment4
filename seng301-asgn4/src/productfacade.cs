@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class ProductFacade
+public class ProductFacade
 {
     private VendingMachine d;
 
