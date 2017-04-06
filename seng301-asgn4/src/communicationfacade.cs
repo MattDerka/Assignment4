@@ -33,7 +33,7 @@ namespace seng301_asgn4.src
         }
 
 
-        //Used to display the product name and price to a touch screen or scrolling text bar
+        //Used to display the product name and price to a touch screen or scrolling text bar. User can also select items from the screen so no buttons on the machine is needed
         public void getName(string item)
         {
             d.Hardware.Display.DisplayMessage(item);
