@@ -26,11 +26,21 @@ namespace seng301_asgn4.src
         public void addCoins(Coin coin)
         {
             inserted.Add(coin);
+            int value = coin.Value.Value;
+            paymentInserted += value;
         }
 
-        public void addCredit(int coin)
+
+
+        public void getProduct(object sender, EventArgs e)
         {
-            paymentInserted += coin;
+           // int id = e.ToString.paymentFacade.
+          //  string name = productFacade.getProductName(rackNum);
+
+           // if(paymentInserted >= price)
+           // {
+            //    productFacade.despenseProduct(rackNum)
+           // }
         }
 
     }

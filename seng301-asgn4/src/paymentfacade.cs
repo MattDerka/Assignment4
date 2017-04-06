@@ -20,7 +20,6 @@ namespace seng301_asgn4.src
             this.businessRule = businessRule;
 
             this.hardwareFacade.CoinReceptacle.CoinAdded += new EventHandler<CoinEventArgs>(addCoin);
-            this.hardwareFacade.CoinReceptacle.CoinAdded += new EventHandler<CoinEventArgs>(addCC);
 
             //Do the same for business rule
 
@@ -31,10 +30,7 @@ namespace seng301_asgn4.src
             businessRule.addCoins(e.Coin);
         }
 
-        public void addCC(object sender, CoinEventArgs e)
-        {
-            businessRule.addCredit(e.Coin.Value.Value);
-        }
+
         
     }
 

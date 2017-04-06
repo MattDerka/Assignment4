@@ -11,17 +11,27 @@ namespace seng301_asgn4.src
     {
         private HardwareFacade hardwareFacade;
         private BusinessRule businessRule;
-
+       // int button;
 
         public CommunicationFacade(HardwareFacade hardwareFacade, BusinessRule businessRule)
         {
             this.hardwareFacade = hardwareFacade;
             this.businessRule = businessRule;
+
+            //hardwareFacade.SelectionButtons[button].Pressed += CommunicationFacade_Pressed;
+
         }
 
         public void selectionButton(int button)
         {
+            hardwareFacade.SelectionButtons[button].Pressed += businessRule.getProduct;
             hardwareFacade.SelectionButtons[button].Press();
+        }
+
+        //Used to display the product name to a touch screen or scrolling text bar
+        public void getName(string Item)
+        {
+            //hardwareFacade.Display.Message = Item;
         }
     }
 }

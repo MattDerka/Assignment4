@@ -12,3 +12,11 @@ C:\Users\matthew.kanderka\Source\Repos\Assignment4\seng301-asgn4\bin\Debug\seng3
 C:\Users\matthew.kanderka\Source\Repos\Assignment4\seng301-asgn4\bin\Debug\seng301-asgn4.dll
 C:\Users\matthew.kanderka\Source\Repos\Assignment4\seng301-asgn4\bin\Debug\seng301-asgn4.pdb
 C:\Users\matthew.kanderka\Source\Repos\Assignment4\seng301-asgn4\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Matthew\Source\Repos\NewRepo\seng301-asgn4\bin\Debug\seng301-asgn4.dll.config
+C:\Users\Matthew\Source\Repos\NewRepo\seng301-asgn4\bin\Debug\seng301-asgn4.dll
+C:\Users\Matthew\Source\Repos\NewRepo\seng301-asgn4\bin\Debug\seng301-asgn4.pdb
+C:\Users\Matthew\Source\Repos\NewRepo\seng301-asgn4\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Matthew\Source\Repos\NewRepo\seng301-asgn4\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Matthew\Source\Repos\NewRepo\seng301-asgn4\obj\Debug\seng301-asgn4.csprojResolveAssemblyReference.cache
+C:\Users\Matthew\Source\Repos\NewRepo\seng301-asgn4\obj\Debug\seng301-asgn4.dll
+C:\Users\Matthew\Source\Repos\NewRepo\seng301-asgn4\obj\Debug\seng301-asgn4.pdb
