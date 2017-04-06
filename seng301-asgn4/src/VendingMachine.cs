@@ -11,17 +11,51 @@ using seng301_asgn4.src;
  */
 public class VendingMachine {
 
+    // private BusinessRule businessRule;
+
     private HardwareFacade hardwareFacade;
-    private ProductFacade productFacade;
-    private CommunicationFacade communicationFacade;
-    private PaymentFacade paymentFacade;
-    private BusinessRule businessRule;
     public HardwareFacade Hardware {
         get {
             return this.hardwareFacade;
         }
     }
 
+    private ProductFacade productFacade;
+    public ProductFacade product
+    {
+        get
+        {
+            return this.productFacade;
+        }
+    }
+
+
+    private CommunicationFacade communicationFacade;
+    public CommunicationFacade comm
+    {
+        get
+        {
+            return this.communicationFacade;
+        }
+    }
+
+    private PaymentFacade paymentFacade;
+    public PaymentFacade payment
+    {
+        get
+        {
+            return this.paymentFacade;
+        }
+    }
+
+    private BusinessRule businessRule;
+    public BusinessRule business
+    {
+        get
+        {
+            return this.businessRule;
+        }
+    }
 
     /**
      * Creates a standard arrangement for the vending machine. All the
@@ -52,14 +86,14 @@ public class VendingMachine {
     public VendingMachine(Cents[] coinKinds, int selectionButtonCount, int coinRackCapacity, int productRackCapacity, int receptacleCapacity) {
 	    this.hardwareFacade = new HardwareFacade(coinKinds, selectionButtonCount, coinRackCapacity, productRackCapacity, receptacleCapacity);
         /* YOU CAN BUILD AND INSTALL THE HARDWARE HERE */
-        this.productFacade = new ProductFacade(hardwareFacade, businessRule);
-        this.paymentFacade = new PaymentFacade(hardwareFacade, businessRule);
-        this.communicationFacade = new CommunicationFacade(hardwareFacade, businessRule);
-        this.businessRule = new BusinessRule(communicationFacade, paymentFacade, productFacade);
+        this.businessRule = new BusinessRule(this);
+        this.productFacade = new ProductFacade(this);
+        this.paymentFacade = new PaymentFacade(this);
+        this.communicationFacade = new CommunicationFacade(this);
     }
 
     public void Configure(List<ProductKind> productKinds)
     {
-        hardwareFacade.Configure(productKinds);
+        this.hardwareFacade.Configure(productKinds);
     }
 }
